@@ -10,5 +10,9 @@ import UIKit
 
 class PersonCell: UITableViewCell {
 
+    static let reuseIdentifier = "personCell"
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var cohortLabel: UILabel!
 
 }
