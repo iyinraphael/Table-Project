@@ -11,7 +11,10 @@ import UIKit
 class AddPersonCell: UITableViewCell {
     
     static let reuseIdentifier = "addPersonCell"
-  
+   
+    @IBAction func add(_ sender: Any) {
+    }
+    
     @IBOutlet var nameField: UITextField!
     @IBOutlet var cohortField: UITextField!
 

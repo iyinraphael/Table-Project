@@ -12,9 +12,33 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateView()
+        
     }
     
-
+    var person: Person?
+    
+    @IBOutlet weak var cohortTextField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    
+    @IBAction func Save(_ sender: Any) {
+    
+        if let person = person {
+            nameField.text = person.name
+            cohortTextField.text = person.cohort
+            navigationController?.popViewController(animated: true)
+        } else {
+            return
+        }
+    }
+    
+    func updateView() {
+        
+        if isViewLoaded {
+            guard let person = person else { return}
+            nameField.text = person.name
+            cohortTextField.text = person.cohort
+        }
+    }
+    
 }
